@@ -1,6 +1,9 @@
+
+
 ENV['SINATRA_ENV'] ||= "development"
 
 require 'bundler/setup'
+
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.establish_connection(
@@ -10,3 +13,7 @@ ActiveRecord::Base.establish_connection(
 
 require_all 'app'
 require_all 'lib'
+
+
+# Trying to add flash[:message]
+# require 'rack-flash'

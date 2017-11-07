@@ -1,0 +1,19 @@
+<h1> Showing all Songs</h1>
+<a href=/songs/new >Add Song</a>
+
+<ol>
+<% @songs.each do |song| %>
+  <li>  <label>Song: </label>
+      <a href =/songs/<%= song.slug %>><%= song.name %></a>
+
+    <label>Artist: </label>
+
+      <a href=/artists/<%= song.artist.slug %>><%= song.artist.name %></a>
+
+    <label>Genre: </label>
+      <% song.genres.each do |genre| %>
+          <a href =/genres/<%= genre.name %>><%= genre.name %></a>
+      <% end %>
+    </li>
+<% end %>
+</ol>
